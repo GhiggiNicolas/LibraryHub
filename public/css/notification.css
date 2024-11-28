@@ -1,0 +1,103 @@
+.toasts {
+    top: 2rem;
+    right: 1rem;
+    position: absolute;
+}
+
+.toast-notification {
+    width: 350px;
+    overflow: hidden;
+    background: #f8f8ff;
+    margin-bottom: .75rem;
+    border-radius: 0.75rem;
+    box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.2);
+}
+
+.hide-toast {
+    display: none;
+}
+
+.toast-notification .toast-content {
+    gap: 0 1rem;
+    color: #353b48;
+    padding: 1rem;
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.toast-notification .toast-icon {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-shrink: 0;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: #27ae60;
+}
+
+.toast-notification .toast-icon i {
+    font-size: 1.25rem;
+}
+
+.toast-notification .toast-progress {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.toast-notification .toast-progress-bar {
+    height: 2px;
+    background-color: #b7b7b7;
+    animation: toastProgress 6s ease-in-out forwards;
+}
+
+.slide-in-slide-out {
+    transform: translateX(110%);
+    animation: slideInRight 0.3s ease-in-out forwards, slideOutRight 0.5s ease-in-out forwards 6s;
+}
+
+.slide-in-fade-out {
+    transform: translateX(110%);
+    animation: slideInRight 0.3s ease-in-out forwards, fadeOut 0.5s ease-in-out forwards 6s;
+}
+
+.wiggle-me {
+    animation: wiggle 2s ease-in;
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(110%); }
+    75% { transform: translateX(-10%); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes slideOutRight {
+    0% { transform: translateX(0%); }
+    25% { transform: translateX(-10%); }
+    100% { transform: translateX(110%); }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes toastProgress {
+    0% { width: 100%; }
+    100% { width: 0; }
+}
+
+@keyframes wiggle {
+    0%, 7% { transform: rotateZ(0); }
+    15% { transform: rotateZ(-13deg); }
+    20% { transform: rotateZ(9deg); }
+    25% { transform: rotateZ(-10deg); }
+    30% { transform: rotateZ(7deg); }
+    35% { transform: rotateZ(-2deg); }
+    40%, 100% { transform: rotateZ(0); }
+}
